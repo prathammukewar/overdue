@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overdue: everything your free library card gets you, and what it's worth</title>
+  <meta name="description" content="Your library card gets you way more than books. Free audiobooks, movies, newspapers, language apps, tutoring, museum passes and more, with what each one would cost you otherwise. Add it up for your card.">
+  <link rel="canonical" href="https://prathammukewar.github.io/overdue/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Overdue">
+  <meta property="og:url" content="https://prathammukewar.github.io/overdue/">
+  <meta property="og:title" content="Your library card is worth more than you think">
+  <meta property="og:description" content="Free audiobooks, movies, newspapers, language apps, museum passes and more. See everything a library card unlocks and what it's worth in actual dollars.">
+  <meta property="og:image" content="https://prathammukewar.github.io/overdue/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A library date-due card stamped: worth $823 a year.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Your library card is worth more than you think">
+  <meta name="twitter:description" content="Free audiobooks, movies, newspapers, language apps, museum passes and more. See everything a library card unlocks and what it's worth.">
+  <meta name="twitter:image" content="https://prathammukewar.github.io/overdue/og-image.png">
+  <meta name="twitter:image:alt" content="A library date-due card stamped: worth $823 a year.">
+
+  <meta name="theme-color" content="#f3ead5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Courier+Prime:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    try {
+      var t = localStorage.getItem('overdue-theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="Overdue, home"><span class="stamp" aria-hidden="true">Overdue</span></a>
+      <nav aria-label="Sections">
+        <a href="#catalog">Catalog</a>
+        <a href="#worth">Calculator</a>
+        <a href="#bigger">City cards</a>
+        <a href="#how">Get a card</a>
+      </nav>
+      <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch to dark theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero-copy">
+          <p class="eyebrow">A field guide to the card in your wallet</p>
+          <h1 id="hero-title">Your library card is <span class="stamp">overdue.</span></h1>
+          <p class="lede" id="hero-lede">Most people use it for books, if they use it at all. The same free card can get you audiobooks, movies, <strong>the New York Times</strong>, language lessons, live tutors, museum passes and, at over a thousand libraries, a telescope. Here's everything it can unlock and what each thing costs when you pay for it the normal way.</p>
+          <div class="cta-row">
+            <a class="btn btn-red" href="#worth">What's mine worth?</a>
+            <a class="btn" href="#catalog">Show me the list</a>
+          </div>
+        </div>
+
+        <div class="duecard">
+          <div class="dc-card">
+            <div class="duecard-head"><b>Date due</b><span>Your library card</span></div>
+            <ul class="duecard-grid" aria-hidden="true">
+              <li><span>MAR 14 2019</span></li><li></li>
+              <li><span>APR 04 2019</span></li><li></li>
+              <li></li><li></li>
+              <li></li><li></li>
+              <li></li><li></li>
+              <li></li><li></li>
+            </ul>
+          </div>
+          <div class="dc-pocket">
+            <p class="dc-pocket-label" aria-hidden="true">Please keep this card in the pocket</p>
+            <p class="duecard-foot" id="duecard-foot">That's the usual lineup at an everyday pace. Yours could be a lot more.</p>
+          </div>
+          <a class="stamp worth-stamp" href="#worth" aria-describedby="duecard-foot">
+            <span class="ws-top">Worth</span>
+            <span class="ws-num" data-total>$0</span>
+            <span class="ws-bot">a year</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="hooks-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="callno" aria-hidden="true"><small>Call no.</small>001.9</p>
+          <h2 id="hooks-title">Wait, that's free?</h2>
+          <p class="section-sub">The stuff people can't believe their card covers. Not every library has all of it, so check yours.</p>
+        </div>
+        <ul class="hooks" id="hooks"></ul>
+      </div>
+    </section>
+
+    <section class="section" id="catalog" aria-labelledby="catalog-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="callno" aria-hidden="true"><small>Call no.</small>025.5</p>
+          <h2 id="catalog-title">The catalog</h2>
+          <p class="section-sub">Everything a US library card commonly unlocks. Every library picks its own lineup, so each card says how common the thing is (our read of library surveys and vendor numbers) and how to check whether yours has it. <span class="checked-note" data-checked></span></p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filter by category" id="cat-filters"></div>
+        <div class="filter-row">
+          <label class="toggle"><input type="checkbox" id="f-home"> From home only</label>
+          <label class="toggle"><input type="checkbox" id="f-common"> Hide the rare stuff</label>
+          <p class="count-note" id="cat-count" aria-live="polite"></p>
+        </div>
+        <ul class="catalog" id="catalog-list"></ul>
+        <div class="more-row"><button class="btn" type="button" id="cat-more" hidden>Show all</button></div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="worth" aria-labelledby="worth-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="callno" aria-hidden="true"><small>Call no.</small>332.024</p>
+          <h2 id="worth-title">What's your card worth?</h2>
+          <p class="section-sub">Mark what your library has. If you haven't looked yet, pick "Check later" and we'll count it but flag it. Then drag the sliders to match how you'd actually use each thing. Every line shows its math, priced at what you'd pay the regular way, no intro deals.</p>
+        </div>
+
+        <div class="calc">
+          <div>
+            <div class="presets" role="group" aria-label="Quick settings">
+              <span class="lbl">Start from</span>
+              <button class="chip" type="button" data-preset="typical">Typical library</button>
+              <button class="chip" type="button" data-preset="big">Big-city library</button>
+              <button class="chip" type="button" data-preset="books">Just books</button>
+            </div>
+            <form id="calc-form" onsubmit="return false"></form>
+            <div class="more-row more-left"><button class="btn btn-small" type="button" id="calc-extras" aria-controls="calc-form" aria-expanded="false">Show more things to count</button></div>
+            <div class="mini-total" aria-hidden="true">
+              <span>Worth <b data-total>$0</b> a year</span>
+              <a href="#total-card" tabindex="-1">Share it</a>
+            </div>
+          </div>
+
+          <aside class="total-card" id="total-card" aria-labelledby="total-lead">
+            <p class="tc-head">Card holder's statement</p>
+            <p class="tc-lead" id="total-lead">Your library card is worth</p>
+            <p aria-live="polite" aria-atomic="true" id="total-live"><span class="tc-num" data-total>$0</span> <span class="tc-per">a year</span></p>
+            <p class="tc-later" id="total-later"></p>
+
+            <div class="share">
+              <canvas id="share-canvas" class="share-preview" width="1200" height="630" role="img" aria-label="Share image preview"></canvas>
+              <div class="share-actions">
+                <button class="btn btn-small btn-red" type="button" id="share-copy">Copy image</button>
+                <button class="btn btn-small" type="button" id="share-download">Download</button>
+                <button class="btn btn-small" type="button" id="share-text">Copy text</button>
+                <button class="btn btn-small" type="button" id="share-native" hidden>Share</button>
+              </div>
+              <p class="share-status" id="share-status" role="status"></p>
+            </div>
+            <p class="fine">These are list prices for the closest paid version of each thing, checked in <span data-checked-month></span>. Libraries set their own limits, like how many Kanopy films you get a month, so treat the total as a ballpark.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bigger" aria-labelledby="bigger-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="callno" aria-hidden="true"><small>Call no.</small>027.4</p>
+          <h2 id="bigger-title">Get a card from somewhere bigger</h2>
+          <p class="section-sub" id="bigger-sub">Plenty of big libraries will give you a card even if you don't live there. Some are free for anyone in the state, a few sell cards to anyone in the country, and a handful give free ebook cards to teens and twentysomethings anywhere in the US.</p>
+        </div>
+
+        <div class="lib-controls">
+          <div class="field">
+            <label for="lib-state">Where do you live?</label>
+            <select id="lib-state"></select>
+          </div>
+          <p class="lib-summary" id="lib-summary" aria-live="polite"></p>
+        </div>
+
+        <table class="libs" id="libs">
+          <caption class="sr-only">Big library systems that give cards to people outside their city</caption>
+          <thead>
+            <tr><th scope="col">Library</th><th scope="col">Who can get one</th><th scope="col">Cost</th><th scope="col">Sign up</th></tr>
+          </thead>
+          <tbody id="libs-body"></tbody>
+        </table>
+        <div class="more-row"><button class="btn" type="button" id="libs-more" hidden>Show the rest</button></div>
+        <p class="aside-note" id="libs-note"></p>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="callno" aria-hidden="true"><small>Call no.</small>020</p>
+          <h2 id="how-title">How to get a card</h2>
+          <p class="section-sub">If you live there, it's free. A lot of libraries even let you start online.</p>
+        </div>
+        <ol class="steps" id="steps"></ol>
+        <div class="student-tip" id="student-tip"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div>
+        <p class="big">Go renew <span class="stamp">something.</span></p>
+        <p style="margin-top:16px">Services vary a lot from one library to the next. Nothing here is guaranteed, and your library's website has the real list.</p>
+      </div>
+      <div>
+        <ul>
+          <li><a id="foot-author" href="https://github.com/prathammukewar">Made by Pratham Mukewar</a></li>
+          <li><a id="foot-source" href="https://github.com/prathammukewar/overdue">Source</a></li>
+          <li><a id="foot-issues" href="https://github.com/prathammukewar/overdue/issues">Spot something wrong? Open an issue</a></li>
+        </ul>
+      </div>
+      <p class="foot-meta"><span data-checked>Last checked September 2026.</span> Prices are US list prices. Overdue isn't connected to any library or company mentioned here.</p>
+    </div>
+  </footer>
+
+  <noscript><p style="padding:16px;text-align:center">The catalog and calculator need JavaScript. Your library's website has the same info.</p></noscript>
+</body>
+</html>
